@@ -1,0 +1,144 @@
+:root {
+  --main: #f6ff4f;
+  --main-light: rgba(153, 185, 62, 0.4);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--main);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  height: 400px;
+  width: 700px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  padding: 15px 30px;
+  position: relative;
+
+  header {
+    min-height: 50px;
+    height: 50px;
+    padding-left: 10px;
+    h1 {
+      font-size: 16px;
+      padding-top: 10px;
+    }
+  }
+
+  footer {
+    height: 50px;
+    min-height: 50px;
+    color: var(--main);
+    display: flex;
+    justify-content: center;
+
+    .expand {
+      border: none;
+      font-size: 14px;
+      background: white;
+      color: #6f7321;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+    }
+  }
+
+  img {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    border: 5px solid var(--main-light);
+    text-align: center;
+    padding: 5px;
+    margin: 15px auto;
+  }
+  main {
+    margin: 0 20px;
+    max-height: 300px;
+    max-width: 620px;
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+.frame {
+  position: absolute;
+  width: 1400px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  transform: translateX(0);
+  transition: transform 1s ease;
+
+  .card {
+    width: 200px;
+    margin: 10px 20px;
+    border: 1px solid var(--main-light);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h5 {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 15px;
+      font-size: 11px;
+      text-align: center;
+    }
+    .follow {
+      padding: 5px 34px;
+      background: white;
+      border: 1px solid var(--main-light);
+      border-radius: 4px;
+      margin: 15px auto;
+      margin-bottom: 30px;
+      color: #6f7321;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .follow:hover {
+      background: #f6ff4f;
+      color: black;
+      box-shadow: 0 6px 10px rgba(136, 155, 224, 0.2);
+    }
+  }
+}
+
+.arrow {
+  &__right,
+  &__left {
+    position: absolute;
+    top: 50%;
+    background: lightblue;
+    padding: 18px 10px;
+    border: none;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  &__right {
+    right: 0;
+    border-radius: 5px 0 0 5px;
+  }
+  &__left {
+    left: 0;
+    border-radius: 0 5px 5px 0;
+    visibility: hidden;
+  }
+}
